@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640" role="img" aria-label="Kura — a personal AI assistant blueprint">
+  <defs>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e1d2e"/>
+      <stop offset="55%" stop-color="#0b1622"/>
+      <stop offset="100%" stop-color="#0a121c"/>
+    </linearGradient>
+    <linearGradient id="needleN" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff6b5e"/>
+      <stop offset="100%" stop-color="#e23b50"/>
+    </linearGradient>
+    <linearGradient id="needleL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eaf2f8"/>
+      <stop offset="100%" stop-color="#aebfce"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1280" height="640" fill="url(#card)"/>
+
+  <!-- compass mark (512-space, recentred to 350,320 at 0.86 scale) -->
+  <g transform="translate(350,320) scale(0.86) translate(-256,-256)">
+    <circle cx="256" cy="256" r="204" fill="#0c1825"/>
+    <circle cx="256" cy="256" r="176" fill="none" stroke="#2f4a66" stroke-width="6"/>
+    <circle cx="256" cy="256" r="150" fill="none" stroke="#21384f" stroke-width="2"/>
+    <g stroke="#3f617f" stroke-width="6" stroke-linecap="round">
+      <line x1="256" y1="92"  x2="256" y2="116"/>
+      <line x1="256" y1="396" x2="256" y2="420"/>
+      <line x1="92"  y1="256" x2="116" y2="256"/>
+      <line x1="396" y1="256" x2="420" y2="256"/>
+    </g>
+    <polygon points="323.9,188.1 282,256 323.9,323.9 256,282 188.1,323.9 230,256 188.1,188.1 256,230" fill="#274057"/>
+    <polygon points="256,108 286,242 256,256 226,242" fill="url(#needleN)"/>
+    <polygon points="256,404 226,270 256,256 286,270" fill="url(#needleL)"/>
+    <polygon points="404,256 270,286 256,256 270,226" fill="url(#needleL)"/>
+    <polygon points="108,256 242,226 256,256 242,286" fill="url(#needleL)"/>
+    <circle cx="256" cy="256" r="20" fill="#0b1622" stroke="#3f617f" stroke-width="6"/>
+    <circle cx="256" cy="256" r="6" fill="#ff6b5e"/>
+  </g>
+
+  <!-- wordmark + copy -->
+  <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+    <text x="600" y="262" font-size="148" font-weight="700" fill="#f3f7fb" letter-spacing="1">Kura</text>
+    <rect x="604" y="300" width="92" height="6" rx="3" fill="#ff6b5e"/>
+    <text x="600" y="372" font-size="44" font-weight="600" fill="#cdd9e6">A personal AI assistant blueprint</text>
+    <text x="600" y="430" font-size="30" fill="#8fa3b6">Wakes up fresh. Remembers your life.</text>
+    <text x="600" y="506" font-size="27" font-weight="600" fill="#6f8aa3" letter-spacing="2">OPENCLAW · CLAUDE · TELEGRAM · NOTION</text>
+  </g>
+</svg>

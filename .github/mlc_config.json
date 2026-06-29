@@ -1,0 +1,11 @@
+{
+  "_comment": "Verify that relative links inside the repo resolve. External links (badges, openclaw.com, anthropic.com, etc.) are out of our control, so they're ignored to keep CI deterministic.",
+  "ignorePatterns": [
+    { "pattern": "^https?://" },
+    { "pattern": "^mailto:" },
+    { "pattern": "<[A-Za-z0-9_./-]+>" }
+  ],
+  "retryOn429": true,
+  "retryCount": 3,
+  "aliveStatusCodes": [200, 206]
+}

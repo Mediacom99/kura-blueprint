@@ -4,9 +4,22 @@ Generated and committed media for the workspace.
 
 ```
 assets/
-├── diagrams/        # Architecture diagrams (Mermaid source)
-│   └── architecture.mmd
-└── images/          # (your turn) avatars, logos, screenshots
+├── logo.svg         # Kura compass mark (used in the README header)
+├── logo.png         # 512×512 raster of the mark
+├── og-image.svg     # 1280×640 social card (source)
+├── og-image.png     # 1280×640 social card (raster — for the GitHub social preview)
+└── diagrams/        # Architecture diagrams (Mermaid source)
+    └── architecture.mmd
+```
+
+## Social preview (Open Graph image)
+`og-image.png` is the neutral compass social card. GitHub's social preview can only
+be set from the web UI, not the API/CLI:
+**Repo → Settings → General → Social preview → Edit → upload `assets/og-image.png`.**
+The SVG sources regenerate the PNGs with `librsvg`:
+```bash
+rsvg-convert -w 1280 -h 640 assets/og-image.svg -o assets/og-image.png
+rsvg-convert -w 512  -h 512  assets/logo.svg     -o assets/logo.png
 ```
 
 ## Notes

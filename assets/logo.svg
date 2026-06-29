@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Kura compass mark">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#16263b"/>
+      <stop offset="100%" stop-color="#0b1622"/>
+    </radialGradient>
+    <linearGradient id="needleN" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff6b5e"/>
+      <stop offset="100%" stop-color="#e23b50"/>
+    </linearGradient>
+    <linearGradient id="needleL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eaf2f8"/>
+      <stop offset="100%" stop-color="#aebfce"/>
+    </linearGradient>
+  </defs>
+
+  <!-- plate -->
+  <rect x="0" y="0" width="512" height="512" rx="112" fill="url(#bg)"/>
+
+  <!-- rings + ticks -->
+  <circle cx="256" cy="256" r="176" fill="none" stroke="#2f4a66" stroke-width="6"/>
+  <circle cx="256" cy="256" r="150" fill="none" stroke="#21384f" stroke-width="2"/>
+  <g stroke="#3f617f" stroke-width="6" stroke-linecap="round">
+    <line x1="256" y1="92"  x2="256" y2="116"/>
+    <line x1="256" y1="396" x2="256" y2="420"/>
+    <line x1="92"  y1="256" x2="116" y2="256"/>
+    <line x1="396" y1="256" x2="420" y2="256"/>
+  </g>
+
+  <!-- intercardinal star (muted, rotated 45°) -->
+  <polygon points="323.9,188.1 282,256 323.9,323.9 256,282 188.1,323.9 230,256 188.1,188.1 256,230"
+           fill="#274057"/>
+
+  <!-- cardinal needles -->
+  <polygon points="256,108 286,242 256,256 226,242" fill="url(#needleN)"/>
+  <polygon points="256,404 226,270 256,256 286,270" fill="url(#needleL)"/>
+  <polygon points="404,256 270,286 256,256 270,226" fill="url(#needleL)"/>
+  <polygon points="108,256 242,226 256,256 242,286" fill="url(#needleL)"/>
+
+  <!-- hub -->
+  <circle cx="256" cy="256" r="20" fill="#0b1622" stroke="#3f617f" stroke-width="6"/>
+  <circle cx="256" cy="256" r="6" fill="#ff6b5e"/>
+</svg>

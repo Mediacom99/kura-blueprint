@@ -1,11 +1,18 @@
-# Kura 🧭 — a personal AI assistant blueprint
+<p align="center">
+  <img src="assets/logo.svg" alt="Kura compass mark" width="132" height="132">
+</p>
 
-[![Runtime](https://img.shields.io/badge/runtime-OpenClaw-blue)](https://openclaw.com)
-[![Model](https://img.shields.io/badge/model-Claude%20Sonnet%20%2F%20Opus-purple)](https://anthropic.com)
-[![Channel](https://img.shields.io/badge/channel-Telegram-2CA5E0)](https://telegram.org)
-[![Storage](https://img.shields.io/badge/storage-Notion-000000)](https://notion.so)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Secrets](https://img.shields.io/badge/secrets-gitleaks-red)](.gitleaks.toml)
+<h1 align="center">Kura&nbsp;🧭 — a personal AI assistant blueprint</h1>
+
+<p align="center">
+  <a href="https://openclaw.com"><img src="https://img.shields.io/badge/runtime-OpenClaw-blue" alt="Runtime"></a>
+  <a href="https://anthropic.com"><img src="https://img.shields.io/badge/model-Claude%20Sonnet%20%2F%20Opus-purple" alt="Model"></a>
+  <a href="https://telegram.org"><img src="https://img.shields.io/badge/channel-Telegram-2CA5E0" alt="Channel"></a>
+  <a href="https://notion.so"><img src="https://img.shields.io/badge/storage-Notion-000000" alt="Storage"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
+  <a href=".gitleaks.toml"><img src="https://img.shields.io/badge/secrets-gitleaks-red" alt="Secrets"></a>
+  <a href=".github/workflows/ci.yml"><img src="https://github.com/Mediacom99/kura-blueprint/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+</p>
 
 > **TL;DR** — Kura is a persistent, file-based **personal AI assistant** that lives on a small VPS, talks to you over **Telegram**, remembers your life in **Notion + Markdown**, and backs itself up to **Git** every hour. This repo is the *blueprint*: the full workspace — personality, operating rules, knowledge base, and memory system — as a clean, reusable template you can fork and make your own. All the personal data has been replaced with a fictional persona (**Sam Rivera**, an indie founder) so you can see exactly how the pieces fit without anyone's private life attached.
 
