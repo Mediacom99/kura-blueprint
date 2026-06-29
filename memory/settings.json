@@ -1,0 +1,4 @@
+{
+  "debug_mode": false,
+  "debug_mode_note": "Shows transcript + context stats + memory actions on every reply. Toggle: 'enable debug' / 'disable debug'."
+}

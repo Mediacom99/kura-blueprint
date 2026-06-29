@@ -1,0 +1,19 @@
+%% Kura architecture — Mermaid source. Render at https://mermaid.live or in any Mermaid-aware viewer.
+flowchart LR
+    U([You]) <-->|text · voice| TG[Telegram]
+    TG <--> OC[OpenClaw runtime]
+    OC <-->|Sonnet / Opus| CL[Claude]
+    OC <-->|tasks · habits · CRM| NO[(Notion)]
+    OC <-->|read / write| WS[/Workspace files/]
+    OC -->|hourly backup| GH[(GitHub)]
+    OC -.->|cron| CRON{{Briefings · Reviews · Quiet time}}
+    OC -.->|STT / TTS| AV[Whisper · Edge TTS]
+
+    subgraph Workspace
+        SOUL[SOUL · IDENTITY · USER]
+        KB[kb/ knowledge base]
+        MEM[memory/ daily logs]
+    end
+    WS --- SOUL
+    WS --- KB
+    WS --- MEM

@@ -1,0 +1,63 @@
+# gitleaks configuration for the Kura blueprint.
+# Run:  gitleaks detect --no-banner            (scan history)
+#       gitleaks protect --staged --no-banner  (scan staged changes; used by the pre-commit hook)
+# Docs: https://github.com/gitleaks/gitleaks
+
+title = "Kura blueprint gitleaks config"
+
+[extend]
+# Start from gitleaks' built-in rules (AWS keys, generic tokens, etc.)
+useDefault = true
+
+# ── Project-specific rules ───────────────────────────────────────
+[[rules]]
+id = "anthropic-api-key"
+description = "Anthropic API key"
+regex = '''sk-ant-[a-zA-Z0-9_\-]{20,}'''
+keywords = ["sk-ant"]
+
+[[rules]]
+id = "openai-api-key"
+description = "OpenAI API key"
+regex = '''sk-(proj-)?[a-zA-Z0-9]{20,}'''
+keywords = ["sk-"]
+
+[[rules]]
+id = "telegram-bot-token"
+description = "Telegram bot token"
+regex = '''[0-9]{8,10}:[a-zA-Z0-9_\-]{35}'''
+keywords = ["bot", "telegram"]
+
+[[rules]]
+id = "notion-api-key"
+description = "Notion integration token"
+regex = '''(secret_|ntn_)[a-zA-Z0-9]{30,}'''
+keywords = ["secret_", "ntn_"]
+
+[[rules]]
+id = "github-pat"
+description = "GitHub personal access token"
+regex = '''gh[pousr]_[A-Za-z0-9]{36,}'''
+keywords = ["ghp_", "gho_", "ghu_", "ghs_", "ghr_"]
+
+[[rules]]
+id = "generic-private-key"
+description = "Private key block"
+regex = '''-----BEGIN ((EC|PGP|DSA|RSA|OPENSSH) )?PRIVATE KEY( BLOCK)?-----'''
+
+# ── Allowlist (placeholders + sample data are not secrets) ───────
+[allowlist]
+description = "Ignore placeholders, examples, and the env template"
+paths = [
+  '''\.env\.example''',
+  '''\.gitleaks\.toml''',
+  '''SECURITY\.md''',
+]
+regexes = [
+  '''<[A-Z_]+>''',                 # <YOUR_NOTION_DB_ID> style placeholders
+  '''<your-[a-z0-9-]+>''',         # <your-...> placeholders
+  '''xxxx+''',
+  '''example''',
+  '''sk-ant-example.*''',
+]
+stopwords = ["example", "placeholder", "your-", "sample"]

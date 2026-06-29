@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Kura blueprint — pre-commit secret guard.
+# Blocks the commit if gitleaks finds a secret in the staged changes.
+# Install with:  make hooks   (or: bash scripts/install-hooks.sh)
+set -euo pipefail
+
+if ! command -v gitleaks >/dev/null 2>&1; then
+  echo "⚠️  gitleaks not found — skipping secret scan."
+  echo "    Install it (https://github.com/gitleaks/gitleaks) so this hook can protect you."
+  echo "    Commit allowed, but you are unprotected."
+  exit 0
+fi
+
+echo "🔒 gitleaks: scanning staged changes…"
+if ! gitleaks protect --staged --no-banner --redact --config .gitleaks.toml; then
+  echo ""
+  echo "❌ Potential secret detected in staged changes. Commit blocked."
+  echo "   Review the finding above. If it's a false positive, add it to the"
+  echo "   [allowlist] in .gitleaks.toml, then re-commit."
+  exit 1
+fi
+
+echo "✅ gitleaks: clean."
+exit 0

@@ -1,0 +1,15 @@
+{
+  "updated_at": "2026-06-29T11:11:00.000Z",
+  "active": [],
+  "recent": [
+    {
+      "id": "example-001",
+      "label": "Curator: nightly kb/ update",
+      "model": "claude-sonnet-4-6",
+      "status": "done",
+      "started_at": "2026-06-28T23:00:00Z",
+      "finished_at": "2026-06-28T23:02:14Z",
+      "note": "Processed daily-log tags, updated 3 kb files."
+    }
+  ]
+}
